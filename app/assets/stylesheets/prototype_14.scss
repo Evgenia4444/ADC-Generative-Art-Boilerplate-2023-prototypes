@@ -1,0 +1,493 @@
+.prototype_body_14 {
+  background: #202036;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+justify-content: space-between;
+}
+
+h1 {
+  color: white;
+  font-size: 48px;
+  font-family: Destine;
+}
+
+h2, h3{
+  color: #9FAAC9;
+}
+
+
+#prototype_14 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 33px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+
+  .instrumentUIContainer,
+  .instrumentUI {
+    width: 560px;
+  }
+
+  .Container {
+  
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    justify-content: space-between;
+    
+    & > .SC_Button:first-child {
+      width: 560px;
+      height: 140px;
+      // margin: auto;
+      margin-bottom: 20px;
+      color: var(--black);
+      background: var(--acid-green);
+      font-family: ADC, Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 30px;
+      line-height: 150px;
+    }
+
+    .SC_ToggleButton {
+      width: 120px;
+      padding: 24px 32px;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      justify-self: center;
+      text-transform: capitalize;
+      background-color: #35364B;
+      color: #9FAAC9;
+      border-radius: 20px;
+      // border: 1px solid #9FAAC9;
+      // border: 8px #9FAAC9;
+      margin-bottom: 8px;
+      box-shadow: rgba(10, 10, 10, 0.8);
+      cursor: pointer;
+      &:hover:not(.active) {
+        background-color: #1A1A2D;
+      }
+
+      &.active {
+        font-weight: 800;
+        color: var(--white);
+        background-color:hsla(198,77%,50%,1);
+        background-image:
+        radial-gradient(at 40% 20%, hsla(197,100%,60%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(101,17%,71%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(204,100%,93%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(195,75%,44%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(208,96%,78%,1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(193,67%,72%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(216,100%,62%,1) 0px, transparent 50%);
+        cursor: default;
+      }
+    }
+
+    .SC_Slider {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 8px;
+
+      h3 {
+        margin-bottom: 14px;
+        font-size: 16px;
+      }
+
+      input[type='range'] {
+        -webkit-appearance: none;
+        padding: 16px;
+        border-radius: 16px;
+        background: #35364B;
+        width: 100%;
+
+        &::-webkit-slider-runnable-track {
+          height: 4px;
+      background: rgba(149, 157, 165, 0.2);
+      border: none;
+      box-shadow: rgba(149, 157, 165, 0.2);
+        }
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border: none;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: #64C0F7;
+          margin-top: -8px;
+          cursor: pointer;
+        }
+
+        &:focus {
+          outline: none;
+
+          &::-webkit-slider-runnable-track {
+            background: rgba(149, 157, 165, 0.2);
+          }
+        }
+      }
+    }
+
+    .SC_Knob {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .wrapper {
+        position: relative;
+        color: #818298;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  
+    justify-content: space-between;
+
+    border-radius: 20px;
+
+        h3 {
+          text-align: center;
+          text-transform: uppercase;
+          color: var(--white);
+        }
+      }
+
+      .body {
+        position: absolute;
+        left: 60px;
+        top: 86px;
+
+        div {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 60px;
+          height: 60px;
+          background: var(--white);
+          border-radius: 50px;
+          z-index: 1;
+
+          &:hover {
+            filter: brightness(90%);
+            cursor: pointer;
+          }
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 28px;
+            display: block;
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--dark-green);
+          }
+        }
+      }
+
+      .value {
+        position: absolute;
+        top: 55px;
+        width: 100%;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 12px;
+        display: flex;
+        width: 22px;
+        height: 13px;
+        font-size: 10px;
+        font-weight: 400;
+        color: var(--white);
+      }
+
+      .bullet {
+        width: 4px;
+        height: 9px;
+        background-color: var(--white);
+      }
+
+      .group {
+        position: absolute;
+        height: 93px;
+        width: 4px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      #group1 {
+        transform: rotate(90deg);
+        left: 88px;
+        top: 70px;
+      }
+
+      #group2 {
+        transform: rotate(45deg);
+        left: 89px;
+        top: 70px;
+      }
+
+      #group3 {
+        top: 70px;
+        left: 87px;
+        transform: rotate(-45deg);
+      }
+
+      .lastBullet {
+        width: 4px;
+        height: 9px;
+        left: 88px;
+        top: 70px;
+        background-color: var(--white);
+        position: absolute;
+      }
+
+      .name {
+        position: absolute;
+        top: 14px;
+        left: 15px;
+        width: 150px;
+        height: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      #value7 {
+        top: 148px;
+        left: 31px;
+
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      #value9 {
+        top: 109px;
+        left: 15px;
+
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      #value11 {
+        top: 71px;
+        left: 31px;
+
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      #value12 {
+        top: 55px;
+        left: 79px;
+
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #value2 {
+        top: 71px;
+        right: 31px;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      #value3 {
+        top: 109px;
+        right: 15px;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      #value5 {
+        top: 148px;
+        right: 31px;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+    .Surface {
+      position: relative;
+      width: 560px;
+      height: 300px;
+      margin: 50px 0;
+      background: var(--grey);
+
+      .pointer {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: var(--acid-green);
+        cursor: pointer;
+      }
+    }
+
+    .Select {
+      position: relative;
+      margin: 30px 0;
+      background: #353649;
+      cursor: pointer;
+      color: #9FAAC9;
+
+      .currentValue {
+        padding: 10px 20px;
+        line-height: 30px;
+      }
+
+      .options {
+        position: absolute;
+        width: 100%;
+
+        .SelectItem {
+          padding: 10px 20px;
+          line-height: 30px;
+          background: #353649;
+
+          &:hover {
+            background: #64C0F7;
+          }
+
+          &.active {
+            background: #64C0F7;
+          }
+        }
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      background-color: #27273D;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+      
+    }
+
+
+.firstSynthContainer,
+.secondSynthContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 48%;
+ 
+
+}
+    .toggleUIButton {
+      padding: 8px 10px;
+      font-size: 14px;
+      text-align: center;
+      text-transform: capitalize;
+      background-color: var(--white);
+      color: var(--black);
+      cursor: pointer;
+      user-select: none;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      background-color:hsla(198,77%,50%,1);
+background-image:
+radial-gradient(at 40% 20%, hsla(197,100%,60%,1) 0px, transparent 50%),
+radial-gradient(at 80% 0%, hsla(101,17%,71%,1) 0px, transparent 50%),
+radial-gradient(at 0% 50%, hsla(204,100%,93%,1) 0px, transparent 50%),
+radial-gradient(at 80% 50%, hsla(195,75%,44%,1) 0px, transparent 50%),
+radial-gradient(at 0% 100%, hsla(208,96%,78%,1) 0px, transparent 50%),
+radial-gradient(at 80% 100%, hsla(193,67%,72%,1) 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(216,100%,62%,1) 0px, transparent 50%);
+  font-family: Starsight; 
+
+      &:hover {
+        background-color: var(--light-grey);
+      }
+    }
+
+    .sampleButtonWrapper {
+      .SC_Button {
+        padding: 8px 10px;
+        font-size: 14px;
+        text-align: center;
+        text-transform: capitalize;
+        background-color: var(--white);
+        color: var(--black);
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: var(--light-grey);
+        }
+      }
+    }
+  }
+}
+
+.mainButton{
+  width: 100%;
+  height: 265px;
+  border-radius: 20px;
+  // margin: auto;
+  margin-bottom: 20px;
+  color: white;
+  background-color:hsla(198,77%,50%,1);
+  background-image:
+  radial-gradient(at 40% 20%, hsla(197,100%,60%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 0%, hsla(101,17%,71%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 50%, hsla(204,100%,93%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 50%, hsla(195,75%,44%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(208,96%,78%,1) 0px, transparent 50%),
+  radial-gradient(at 80% 100%, hsla(193,67%,72%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 0%, hsla(216,100%,62%,1) 0px, transparent 50%);
+  font-family: Starsight; 
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  align-content: center;
+  font-size: 64px;
+  line-height: 150px;
+  margin-bottom: 48px;
+}
+
+.SC_ToggleButtonSetElements{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.SC_ToggleButtonSetElements{
+  display: flex;
+  justify-content: space-between;
+}
